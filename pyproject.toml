@@ -1,0 +1,39 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=77"]
+
+[project]
+name = "nx-ladybug"
+version = "0.1.0"
+description = "LadybugDB storage provider for nx-arrow columnar graphs"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "BSD-3-Clause OR MIT"
+keywords = ["networks", "graph theory", "apache arrow", "networkx", "columnar", "ladybugdb"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "nx-arrow>=0.1.0",
+    "ladybug>=0.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/Ladybug-Memory/nx-ladybug"
+"Source Code" = "https://github.com/Ladybug-Memory/nx-ladybug"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
